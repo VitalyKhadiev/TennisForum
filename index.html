@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теннисный форум</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon5.PNG" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="header">
+    <div class="header-content">
+        <h1 class="logo">🎾 Теннисный форум</h1>
+        
+        <!-- Поиск -->
+        <div class="search-container">
+            <form class="search-form">
+                <input type="search" 
+                       placeholder="Поиск по форуму..." 
+                       class="search-input">
+                <button type="submit" class="search-btn">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <button class="menu-toggle" aria-label="Открыть меню">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="navbar">
+            <a href="#home" class="nav-link active">Турниры</a>
+            <a href="#forum" class="nav-link">Обсуждения</a>
+            <a href="#market" class="nav-link">Доска объявлений</a>
+            <a href="#partners" class="nav-link">Найти партнера</a>
+            <a href="#rankings" class="nav-link">Мировые рейтинги</a>
+            <div class="auth-buttons">
+                <button type="button" class="auth-btn login-btn">Вход</button>
+                <button type="button" class="auth-btn register-btn">Регистрация</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Модальное окно входа -->
+<div class="modal" id="loginModal">
+    <button class="modal-close">&times;</button>
+    <h3 class="modal-title">Вход на форум</h3>
+    <form class="auth-form">
+        <div class="form-group">
+            <label>Электронная почта</label>
+            <input type="email" required>
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" required>
+        </div>
+        <button type="submit" class="auth-submit-btn">Войти</button>
+    </form>
+</div>
+
+<!-- Модальное окно регистрации -->
+<div class="modal" id="registerModal">
+    <button class="modal-close">&times;</button>
+    <h3 class="modal-title">Регистрация</h3>
+    <form class="auth-form">
+        <div class="form-group">
+            <label>Имя пользователя</label>
+            <input type="text" required>
+        </div>
+        <div class="form-group">
+            <label>Электронная почта</label>
+            <input type="email" required>
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" required>
+        </div>
+        <button type="submit" class="auth-submit-btn">Зарегистрироваться</button>
+    </form>
+</div>
+
+<!-- Ближайшие турниры -->
+<section id="calendar"  class="calendar-section">
+    <h2 class="section-title">Ближайшие турниры</h2>
+    <div class="calendar-container">
+        
+            <div class="event">
+                <div class="event-left">
+                    <div class="event-date">
+                        <span class="day">19</span>
+                        <span class="month">МАЙ</span>
+                    </div>
+                    <div class="event-status current">Идёт сейчас</div>
+                </div>
+                <div class="event-right">
+                    <h3 class="event-title">Roland Garros</h3>
+                    <div class="event-details">
+                        <span class="event-location">Париж, Франция</span>
+                        <span class="event-category">ATP GRAND SLAM</span>
+                        <span class="event-surface">Грунт</span>
+                    </div>
+                    <div class="event-duration">
+                        <time datetime="2025-05-19">19 мая</time> - 
+                        <time datetime="2025-06-08">8 июня</time>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event future">
+                <div class="event-left">
+                    <div class="event-date">
+                        <span class="day">16</span>
+                        <span class="month">ИЮНЬ</span>
+                    </div>
+                    <div class="event-status upcoming">Предстоит</div>
+                </div>
+                <div class="event-right">
+                    <h3 class="event-title">Cinch Championships</h3>
+                    <div class="event-details">
+                        <span class="event-location">Лондон, Великобритания</span>
+                        <span class="event-category">ATP 500</span>
+                        <span class="event-surface">Трава</span>
+                    </div>
+                    <div class="event-duration">
+                        <time datetime="2025-06-16">16 июня</time> - 
+                        <time datetime="2025-06-22">22 июня</time>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event future">
+                <div class="event-left">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">ИЮНЬ</span>
+                    </div>
+                    <div class="event-status upcoming">Предстоит</div>
+                </div>
+                <div class="event-right">
+                    <h3 class="event-title">Mallorca Championships</h3>
+                    <div class="event-details">
+                        <span class="event-location">Майорка, Испания</span>
+                        <span class="event-category">ATP 250</span>
+                        <span class="event-surface">Трава</span>
+                    </div>
+                    <div class="event-duration">
+                        <time datetime="2025-06-22">22 июня</time> - 
+                        <time datetime="2025-06-28">28 июня</time>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event future">
+                <div class="event-left">
+                    <div class="event-date">
+                        <span class="day">30</span>
+                        <span class="month">ИЮНЬ</span>
+                    </div>
+                    <div class="event-status upcoming">Предстоит</div>
+                </div>
+                <div class="event-right">
+                    <h3 class="event-title">Wimbledon</h3>
+                    <div class="event-details">
+                        <span class="event-location">Лондон, Великобритания</span>
+                        <span class="event-category">ATP GRAND SLAM</span>
+                        <span class="event-surface">Трава</span>
+                    </div>
+                    <div class="event-duration">
+                        <time datetime="2025-06-30">30 июня</time> - 
+                        <time datetime="2025-07-13">13 июля</time>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</section>
+
+ <!-- Последние новости -->
+<section id="news" class="news-section">
+    <h2 class="section-title">Последние новости</h2>
+    <div class="news-grid">
+        <article class="news-card">
+            <img src="/15-rossijskih-tennisistov-popali-v-zayavku-na-uimbldon-2025_17478396031373322312.jpg" 
+                 alt="Уимблдон 2025" 
+                 class="news-image">
+            <div class="news-content">
+                <h3>15 российских теннисистов попали в заявку на Уимблдон-2025</h3>
+                <p>Россию на мэйджоре в Великобритании представят 11 девушек и четверо мужчин. Предлагаем ознакомиться с российскими участниками Уимблдона-2025.</p>
+                <time>21.05.2025 20:32</time>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="./andrej-rublyov_17478350581758239022.jpg" 
+                 alt="Андрей Рублёв" 
+                 class="news-image">
+            <div class="news-content">
+                <h3>Андрей Рублёв обыграл 333-ю ракетку мира Энгеля и вышел в 1/4 финала турнира в Гамбурге</h3>
+                <p>Российский теннисист 17-я ракетка мира Андрей Рублёв вышел в 1/4 финала турнира АТР-500 в Гамбурге (Германия), одолев 333-ю ракетку мира Юстина Энгеля со счётом 6:3, 7:5. Во втором сете россиянин сумел уйти от сетбола.</p>
+                <time>21.05.2025 19:32</time>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="/endi-marrej-i-novak-dzhokovich_17478290451599596917.jpg" 
+                 alt="Энди Маррей" 
+                 class="news-image">
+            <div class="news-content">
+                <h3>Маррей рассказал об одной вещи, по которой не будет скучать после расставания с Джоковичем</h3>
+                <p>Экс-теннисист Энди Маррей высказался о прекращении сотрудничества с сербом Новаком Джоковичем. Он также рассказал о предпочтениях в еде 24-кратного победителя ТБШ.</p>
+                <time>21.05.2025 18:16</time>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="/stabbs-o-zvereve-ty-nikogda-ne-vyigraesh-bolshoj-shlem-esli-budesh-zhalovatsya-na-myachi_17478279861833620747.jpg" 
+                 alt="Стаббс — о Звереве" 
+                 class="news-image">
+            <div class="news-content">
+                <h3>Стаббс — о Звереве: ты никогда не выиграешь «Большой шлем», если будешь жаловаться на мячи</h3>
+                <p>Бывшая теннисистка, четырёхкратная победительница турниров «Большого шлема» в парном разряде Ренне Стаббс жёстко высказалась о немце Александре Звереве, в частности, о его комментариях относительно итальянца Лоренцо Музетти.</p>
+                <time>20.05.2025 19:32</time>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="/uehal-v-mashine-odin-i-plakal-rafael-nadal-rasskazal-o-samom-tyazhyolom-rolan-garros_1747822422404951613.jpg" 
+                 alt="Рафаэль Надаль" 
+                 class="news-image">
+            <div class="news-content">
+                <h3>«Уехал в машине один и плакал». Рафаэль Надаль рассказал о самом тяжёлом «Ролан Гаррос»</h3>
+                <p>22-кратный победитель турниров «Большого шлема» испанец Рафаэль Надаль рассказал, как переживал неудачные выступления на «Ролан Гаррос» в 2015 (проиграл в четвертьфинале) и 2016 годах (снялся с третьего круга).</p>
+                <time>20.05.2025 17:40</time>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="/anna-blinkova-proigrala-emme-navarro-vo-vtorom-kruge-turnira-v-strasburge_17478319592040814036.jpg" 
+                 alt="Анна Блинкова" 
+                 class="news-image">
+            <div class="news-content">
+                <h3>Анна Блинкова проиграла Эмме Наварро во втором круге турнира в Страсбурге</h3>
+                <p>65-я ракетка мира российская теннисистка Анна Блинкова завершила выступление на турнире категории WTA-500 в Страсбурге (Франция). Во втором круге она потерпела поражение от девятого номера рейтинга американки Эммы Наварро со счётом 4:6, 1:6.</p>
+                <time>20.05.2025 16:19</time>
+            </div>
+        </article>
+    </div>
+</section>
+
+    <!-- популярные темы -->
+</section>
+    <main class="main-content">
+        <section id="forum" class="topics-section">
+            <h2 class="section-title">Популярные темы</h2>
+            <div class="topic-list" id="topicList"></div>
+        </section>
+        <section class="topics-section">
+
+    <div class="topic-list" id="topicList"></div>
+    <div class="load-more-container">
+        <button class="load-more-btn" id="loadMore">Загрузить еще</button>
+    </div>
+</section>
+
+<!-- Объявления -->
+    <section id="market" class="market-section">
+            <h2 class="section-title">Объявления</h2>
+            <div class="market-grid">
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>Теннисные мячи<br/>Slazenger Wimbledon 2025 4B x 18</h3>
+                    <p class="price">13 000 ₽.</p>
+                </div>
+
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>Виброгаситель<br/>Wilson Minions V2.0 Dampener</h3>
+                    <p class="price">900 ₽.</p>
+                </div>
+
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>Ракетка Wilson<br/>Shift 99 V1.0 SESSION SOIRE RG 2024</h3>
+                    <p class="price">25 000 ₽.</p>
+                </div>
+
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>Ракетка Wilson<br/>Pro Staff (2024)</h3>
+                    <p class="price">22 000 ₽.</p>
+                </div>
+
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>струна Solinco<br/>Hyper-G 1,30 200 метров</h3>
+                    <p class="price">13 000 ₽.</p>
+                </div>
+
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>Тубус для сбора<br/>мячей 7/6 Ball Picking Tube 15 Ball - Black</h3>
+                    <p class="price">2700 ₽.</p>
+                </div>
+
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>Регулируемые барьеры<br/>7/6 Training Barriers 6 шт</h3>
+                    <p class="price">2500 ₽.</p>
+                </div>
+
+                <div class="market-card sell">
+                    <span class="market-type">Продам</span>
+                    <h3>Теннисная ракетка<br/>Head Boom Pro 2024</h3>
+                    <p class="price">29 000 ₽.</p>
+                </div>
+            </div>
+        </section>  
+
+    <!-- создать новую тему -->
+        <section id="new-topic">
+            <h2 class="section-title">Создать новую тему</h2>
+            <form class="topic-form" id="topicForm">
+                <input type="text" class="form-input" placeholder="Заголовок темы" required>
+                <textarea class="form-textarea" placeholder="Описание темы..." rows="4" required></textarea>
+                <button type="submit" class="submit-btn">Создать тему</button>
+            </form>
+        </section>
+
+         <!-- Партнеры для игры -->
+    <section id="partners" class="partners-section">
+    <h2 class="section-title">Поиск партнера для игры в теннис в <span class="city-name">Тюмени</span></h2>
+    <div class="partners-grid">
+        <div class="partner-card">
+            <div class="player-info">
+                <div class="info-row">
+                    <span class="info-label">Имя:</span>
+                    <span class="info-value">Алексей</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Возраст:</span>
+                    <span class="info-value">28 лет</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Уровень:</span>
+                    <span class="info-value rating">3.5 (NTRP)</span>
+                </div>
+            </div>
+            <button class="contact-btn">Написать сообщение</button>
+        </div>
+
+        <div class="partner-card">
+            <div class="player-info">
+                <div class="info-row">
+                    <span class="info-label">Имя:</span>
+                    <span class="info-value">Елизавета</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Возраст:</span>
+                    <span class="info-value">26 лет</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Уровень:</span>
+                    <span class="info-value rating">4.5 (NTRP)</span>
+                </div>
+            </div>
+            <button class="contact-btn">Написать сообщение</button>
+        </div>
+
+        <div class="partner-card">
+            <div class="player-info">
+                <div class="info-row">
+                    <span class="info-label">Имя:</span>
+                    <span class="info-value">Дмитрий</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Возраст:</span>
+                    <span class="info-value">22 года</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Уровень:</span>
+                    <span class="info-value rating">5.0 (NTRP)</span>
+                </div>
+            </div>
+            <button class="contact-btn">Написать сообщение</button>
+        </div>
+
+        <div class="partner-card">
+            <div class="player-info">
+                <div class="info-row">
+                    <span class="info-label">Имя:</span>
+                    <span class="info-value">Евгений</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Возраст:</span>
+                    <span class="info-value">29 лет</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Уровень:</span>
+                    <span class="info-value rating">5.5 (NTRP)</span>
+                </div>
+            </div>
+            <button class="contact-btn">Написать сообщение</button>
+        </div>
+    </div>
+</section>
+
+<!-- atp рейтинг -->
+        <section id="rankings" class="rankings-section">
+            <div class="ranking-columns">
+                <div class="ranking-column">
+                    <h2 class="section-title">ATP Рейтинг</h2>
+                    <div class="table-container">
+                        <table class="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Игрок</th>
+                                    <th>Очки</th>
+                                </tr>
+                            </thead>
+                            <tbody id="atpRanking"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+<!-- WTA Рейтинг -->
+                <div class="ranking-column">
+                    <h2 class="section-title">WTA Рейтинг</h2>
+                    <div class="table-container">
+                        <table class="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Игрок</th>
+                                    <th>Очки</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wtaRanking"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- футер -->
+<footer class="tennis-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <div class="tennis-brand">
+                <p class="slogan">Сообщество профессионалов и любителей тенниса</p><br>
+            </div>
+            <div class="tournament-info">
+                <h4>Ближайший турнир:</h4>
+                <p>Roland Garros<br>19 мая - 8 июня 2025 <br>Париж, Франция</p>
+            </div>
+        </div>
+
+        <!-- Навигация -->
+        <div class="footer-section">
+            <h4 class="footer-heading">Разделы</h4>
+            <ul class="tennis-menu">
+                <li><a href="#calendar"><i class="icon-trophy"></i>Турниры</a></li>
+                <li><a href="#news"><i class="icon-coach"></i>Новости</a></li>
+                <li><a href="#forum"><i class="icon-racket"></i>Обсуждения</a></li>
+                <li><a href="#market"><i class="icon-rules"></i>Объявления</a></li>
+                <li><a href="#new-topic"><i class="icon-rules"></i>Создать тему</a></li>
+                <li><a href="#partners"><i class="icon-rules"></i>Найти партнёра</a></li>
+            </ul>
+        </div>
+
+        <!-- Контакты -->
+        <div class="footer-section">
+            <h4 class="footer-heading">Контакты</h4>
+            <div class="tennis-contacts">
+                <p><i class="icon-court"></i>119992, Москва, Лужнецкая набережная, дом 8, кабинет 376</p>
+                <p><i class="icon-phone"></i>+7 (495) 123-45-67</p>
+                <!-- <div class="social-tennis">
+                    <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="icon-youtube"></i></a>
+                    <a href="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" aria-label="Telegram"><i class="icon-telegram"></i></a>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Рассылка -->
+        <div class="footer-section">
+            <h4 class="footer-heading">Новостная рассылка</h4>
+            <form class="tennis-newsletter">
+                <input type="email" placeholder="Электронная почта" required>
+                <button type="submit" class="tennis-btn">
+                    <i class="icon-send"></i>Подписаться
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Нижняя панель -->
+    <div class="footer-court">
+    <div class="legal-block">
+        <div class="copyright">© 2025 Tennis Forum</div>
+        <div class="legal-links">
+            <a>Политика конфиденциальности</a>
+            <a>Пользовательское соглашение</a>
+        </div>
+    </div>
+</div>
+</footer>
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>
